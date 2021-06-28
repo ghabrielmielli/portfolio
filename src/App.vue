@@ -3,7 +3,7 @@
     <pretty-canvas>
       <nav-header></nav-header>
       <glass-container>
-        <main-content></main-content>
+        <router-view />
       </glass-container>
     </pretty-canvas>
   </div>
@@ -11,7 +11,6 @@
 
 <script>
 import GlassContainer from "./components/GlassContainer.vue";
-import MainContent from "./components/MainContent.vue";
 import NavHeader from "./components/NavHeader.vue";
 import PrettyCanvas from "./components/PrettyCanvas.vue";
 export default {
@@ -20,7 +19,6 @@ export default {
     NavHeader,
     PrettyCanvas,
     GlassContainer,
-    MainContent,
   },
 };
 </script>

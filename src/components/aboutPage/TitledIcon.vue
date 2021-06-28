@@ -2,7 +2,7 @@
   <div class="mainDiv">
     <img src="@/assets/pp.jpg" />
     <h1>Ghabriel Mielli</h1>
-    <s>(soon to be)</s>
+    <span>(forthcoming)</span>
     <h2>Software Engineer</h2>
   </div>
 </template>
@@ -24,10 +24,10 @@ img {
   align-items: center;
   justify-content: center;
 }
-s {
+span {
   position: relative;
-  top: 2rem;
-  right: 8rem;
+  top: 1.8rem;
+  right: 7rem;
   color: var(--texto-secundario);
   transform: rotate(-15deg);
   font-size: 0.8rem;
@@ -35,6 +35,6 @@ s {
 
 h1 {
   margin-top: 1rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: -0.4rem;
 }
 </style>

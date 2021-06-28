@@ -17,7 +17,7 @@ export default {
         x: 80,
         y: 80,
         radius: 300,
-        color: "#8596A6",
+        color: "#242D40",
 
         mass: 0.2,
 

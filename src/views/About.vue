@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <titled-icon></titled-icon>
   </div>
 </template>
+<script>
+import TitledIcon from "@/components/aboutPage/TitledIcon.vue";
+export default {
+  components: {
+    TitledIcon,
+  },
+};
+</script>
+<style>
+</style>
