@@ -16,7 +16,7 @@
 }
 
 html {
-	font-size: min(14px, 2.3vw);
+	font-size: min(16px, 2vw);
 	color: var(--texto-principal);
 }
 body {
@@ -36,4 +36,8 @@ h1 {
 }
 h2 {
 	font-size: 1.4rem;
+}
+
+p {
+	font-family: "Nunito", sans-serif;
 }

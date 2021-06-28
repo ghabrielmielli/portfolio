@@ -2,9 +2,11 @@
   <div>
     <pretty-canvas>
       <nav-header></nav-header>
-      <glass-container>
-        <router-view />
-      </glass-container>
+      <div class="flex centered">
+        <glass-container class="centered">
+          <router-view />
+        </glass-container>
+      </div>
     </pretty-canvas>
   </div>
 </template>
@@ -26,4 +28,14 @@ export default {
 <style>
 /* @import "./aux/reset.css"; */
 @import "./aux/brand.css";
+
+.flex {
+  display: flex;
+}
+.centered {
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  /* border: 4px solid pink; */
+}
 </style>

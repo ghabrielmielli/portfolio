@@ -1,5 +1,5 @@
 <template >
-  <div>
+  <div class="mainDiv">
     <canvas id="c"> </canvas>
     <slot></slot>
   </div>
@@ -110,9 +110,15 @@ export default {
   },
 };
 </script>
-<style >
+<style scoped>
 #c {
   position: fixed;
   z-index: -1;
+}
+.mainDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
 }
 </style>

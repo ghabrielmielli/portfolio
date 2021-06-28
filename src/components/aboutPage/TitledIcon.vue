@@ -13,8 +13,8 @@ export default {};
 @import "../../aux/brand.css";
 
 img {
-  width: 20%;
-  height: 20%;
+  width: 10rem;
+  height: 10rem;
   border: 0.3em solid var(--destaque);
   border-radius: 50%;
 }
@@ -34,7 +34,7 @@ span {
 }
 
 h1 {
-  margin-top: 1rem;
+  margin-top: 0.4rem;
   margin-bottom: -0.4rem;
 }
 </style>

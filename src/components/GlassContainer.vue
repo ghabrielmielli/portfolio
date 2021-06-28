@@ -10,15 +10,12 @@ export default {};
 @import "../aux/brand.css";
 .basic-container {
   width: 90vw;
-  min-height: 87vh;
-  height: 87vh;
-  max-height: 87vh;
+  height: 70vh;
 
   margin: 20px auto;
   padding: 1rem 1rem 1rem 1rem;
 
   background-color: var(--fundo-principal-glass);
-  border: 2px solid var(--fundo-secundario);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 </style>
