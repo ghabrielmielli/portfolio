@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+
+:root {
+	--texto-principal: #edede6;
+	--texto-secundario: #d4d4cf;
+
+	--fundo-principal-glass: #252623d0;
+	--fundo-principal: #252623;
+	--fundo-secundario: #636159;
+
+	--fundo-secundario-light: #bfb6a8;
+
+	--destaque: #bf5b21;
+}
+
+html {
+	font-size: min(14px, 2.3vw);
+	color: var(--texto-principal);
+}
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Merienda", Helvetica, Arial;
+}
+input[type="button"],
+input[type="submit"] {
+	font-family: "Gill Sans", "Arial Narrow", Arial, sans-serif;
+	font-size: 1.4rem;
+}
+
+h1 {
+	font-size: 2.2rem;
+}
+h2 {
+	font-size: 1.6rem;
+}

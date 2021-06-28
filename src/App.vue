@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <pretty-canvas>
+      <nav-header></nav-header>
+      <glass-container>
+        <main-content></main-content>
+      </glass-container>
+    </pretty-canvas>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import GlassContainer from "./components/GlassContainer.vue";
+import MainContent from "./components/MainContent.vue";
+import NavHeader from "./components/NavHeader.vue";
+import PrettyCanvas from "./components/PrettyCanvas.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavHeader,
+    PrettyCanvas,
+    GlassContainer,
+    MainContent,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* @import "./aux/reset.css"; */
+@import "./aux/brand.css";
 </style>
