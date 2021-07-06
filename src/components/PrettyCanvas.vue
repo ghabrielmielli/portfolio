@@ -11,29 +11,39 @@ export default {
       c: null,
       cWidth: innerWidth,
       cHeigth: innerHeight,
-      cRestrictFat: 200, //a higher value than 0 makes the ball able to go off the screen.
+      cRestrictFat: 300, //a higher value than 0 makes the ball able to go off the screen.
       cColor: "#0C1115",
 
       ball: {
         x: innerWidth / 2,
         y: innerHeight / 2,
         radius: innerHeight / 2,
-        color: "#be2f29",
+
+        //moon-like properties
+        alpha: 0.05, //color alpha
+        isWaningMoon: false,
+        moonCycleSpeed: 0.25,
 
         velocity: {
-          x: 1,
+          x: -1,
           y: 1,
           offset: {
             // the velocity for bounce back. its the base value + a random value between 0 and the offset value.
-            x: 0.8,
-            y: 1,
-            baseX: 0.3,
-            baseY: 0.5,
+            x: 0.5,
+            y: 0.7,
+            baseX: 0.2,
+            baseY: 0.3,
           },
         },
-        gravity: 0.005,
+        gravity: 0.002,
       },
     };
+  },
+  computed: {
+    ballColor: function () {
+      let color = `rgba(190, 47, 41, ${this.ball.alpha})`;
+      return color;
+    },
   },
   mounted() {
     var c = document.getElementById("c");
@@ -47,8 +57,6 @@ export default {
       this.cWidth = c.width = innerWidth;
       this.cHeigth = c.height = innerHeight;
       this.ball.radius = innerHeight / 2;
-
-      this.animate();
     });
   },
   methods: {
@@ -62,7 +70,7 @@ export default {
         Math.PI * 2,
         false
       );
-      this.c.fillStyle = this.ball.color;
+      this.c.fillStyle = this.ballColor;
       this.c.fill();
       this.c.closePath();
     },
@@ -85,6 +93,8 @@ export default {
       } else {
         this.ball.velocity.y += this.ball.gravity;
       }
+
+      this.changeMoonPhase();
     },
     paintBackground() {
       this.c.fillStyle = this.cColor;
@@ -143,6 +153,21 @@ export default {
         case "right":
           this.ball.x = this.cWidth - this.ball.radius + this.cRestrictFat;
           break;
+      }
+    },
+    changeMoonPhase() {
+      if (this.ball.isWaningMoon) {
+        if (this.ball.alpha > 0.4) {
+          this.ball.alpha -= 0.001 * this.ball.moonCycleSpeed;
+        } else {
+          this.ball.isWaningMoon = false;
+        }
+      } else {
+        if (this.ball.alpha < 1) {
+          this.ball.alpha += 0.001 * this.ball.moonCycleSpeed;
+        } else {
+          this.ball.isWaningMoon = true;
+        }
       }
     },
   },

@@ -9,10 +9,10 @@ export default {};
   background-color: var(--light);
   border-radius: 50%;
   position: absolute;
-  animation: leftright 15s cubic-bezier(0.39, 0, 0.63, 1),
-    updown 15s cubic-bezier(0.39, 0, 0.63, 1),
-    glow 15s cubic-bezier(0.39, 0, 0.63, 1),
-    loop 5s infinite 15s cubic-bezier(0.39, 0, 0.63, 1);
+  animation: leftright 18s 1 5s cubic-bezier(0.39, 0, 0.63, 1),
+    updown 18s 1 5s cubic-bezier(0.39, 0, 0.63, 1),
+    glow 18s 1 5s cubic-bezier(0.39, 0, 0.63, 1),
+    loop 7s infinite 23s cubic-bezier(0.39, 0, 0.63, 1);
   animation-fill-mode: forwards, forwards;
 }
 
