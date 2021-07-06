@@ -11,13 +11,13 @@ export default {
       c: null,
       cWidth: innerWidth,
       cHeigth: innerHeight,
-      cColor: "#2B3240",
+      cColor: "#0C1115",
 
       ball: {
         x: 80,
         y: 80,
         radius: 300,
-        color: "#242D40",
+        color: "#1A2C42",
 
         mass: 0.2,
 

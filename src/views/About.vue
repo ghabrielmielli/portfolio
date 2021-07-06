@@ -15,7 +15,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .flex-box {
   display: flex;
   width: 100%;
@@ -24,7 +24,7 @@ export default {
 .divider {
   width: 1px;
   height: 80%;
-  background-color: var(--texto-principal);
+  background-color: var(--secondary);
   align-self: center;
 }
 

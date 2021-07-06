@@ -2,7 +2,7 @@
   <div class="mainDiv">
     <img src="@/assets/pp.jpg" />
     <h1>Ghabriel Mielli</h1>
-    <span>(forthcoming)</span>
+    <span>forthcoming</span>
     <h2>Software Engineer</h2>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {};
 img {
   width: 10rem;
   height: 10rem;
-  border: 0.3em solid var(--destaque);
+  border: 1px solid var(--secondary);
   border-radius: 50%;
 }
 .mainDiv {
@@ -25,10 +25,11 @@ img {
   justify-content: center;
 }
 span {
+  font-family: "Josefin Sans", sans-serif;
   position: relative;
-  top: 1.8rem;
-  right: 7rem;
-  color: var(--texto-secundario);
+  top: 1.7rem;
+  right: 5.5rem;
+  color: var(--light);
   transform: rotate(-15deg);
   font-size: 0.8rem;
 }

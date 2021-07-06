@@ -6,12 +6,16 @@
       how's the world out there for web developers! Feel free to contact me for
       internship opportunities.
     </h4>
-    <router-link class="navBtn" to="/contact">Find me!</router-link>
+    <basic-button isCool>Find me!</basic-button>
   </div>
 </template>
 
 <script>
-export default {};
+import basicButton from "../components/atoms/basicButton.vue";
+
+export default {
+  components: { basicButton },
+};
 </script>
 <style scoped>
 .main-content {
@@ -31,16 +35,5 @@ h4 {
   font-weight: 100;
   flex-shrink: 10;
   width: 75%;
-}
-.navBtn {
-  color: var(--destaque);
-  border-radius: 2px;
-  margin: 1rem 0 0 3rem;
-  padding: 0.2rem 2rem;
-  font-size: 1.8rem;
-  text-decoration: none;
-  width: fit-content;
-  background-color: var(--texto-principal);
-  box-shadow: -8px 8px 0 var(--fundo-secundario);
 }
 </style>

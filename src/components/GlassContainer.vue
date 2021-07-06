@@ -15,7 +15,7 @@ export default {};
   margin: 20px auto;
   padding: 1rem 1rem 1rem 1rem;
 
-  background-color: var(--fundo-principal-glass);
+  background-color: var(--glassy);
   border-radius: 4px;
 }
 </style>
