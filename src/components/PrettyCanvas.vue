@@ -11,21 +11,29 @@ export default {
       c: null,
       cWidth: innerWidth,
       cHeigth: innerHeight,
+      cRestrictFat: 200, //a higher value than 0 makes the ball able to go off the screen.
       cColor: "#0C1115",
 
       ball: {
-        x: 80,
-        y: 80,
-        radius: 300,
+        x: innerWidth / 2,
+        y: innerHeight / 2,
+        radius: innerHeight / 2,
         color: "#be2f29",
 
         mass: 0.2,
 
         velocity: {
           x: 1,
-          y: (Math.random() - 0.5) * 10,
+          y: 1,
+          offset: {
+            // the velocity for bounce back. its the base value + a random value between 0 and the offset value.
+            x: 1.8,
+            y: 1,
+            baseX: 0.3,
+            baseY: 0.5,
+          },
         },
-        gravity: 0.03,
+        gravity: 0.005,
       },
     };
   },
@@ -36,6 +44,14 @@ export default {
     var ctx = c.getContext("2d");
     this.c = ctx;
     this.animate();
+
+    addEventListener("resize", () => {
+      this.cWidth = c.width = innerWidth;
+      this.cHeigth = c.height = innerHeight;
+      this.ball.radius = innerHeight / 2;
+
+      this.animate();
+    });
   },
   methods: {
     draw() {
@@ -63,11 +79,20 @@ export default {
       this.ball.x += this.ball.velocity.x;
       this.ball.y += this.ball.velocity.y;
 
-      //Impulsiona a bola ao tocar no chão
-      if (this.ball.y + this.ball.radius >= this.cHeigth) {
-        this.ball.velocity.y = ((Math.random() * 10) % 3) + 2;
+      //Makes the ball bounce when hit the ground
+      if (this.isOutOfCorner("bottom")) {
+        this.ball.velocity.y =
+          ((Math.random() * 100) % this.ball.velocity.offset.y) +
+          this.ball.velocity.offset.baseY;
       } else {
         this.ball.velocity.y += this.ball.gravity;
+      }
+
+      //Change velocity of x axis on bounce
+      if (this.isOutOfCorner("left") || this.isOutOfCorner("right")) {
+        this.ball.velocity.x =
+          ((Math.random() * 100) % this.ball.velocity.offset.x) +
+          this.ball.velocity.offset.baseX;
       }
     },
     paintBackground() {
@@ -81,30 +106,48 @@ export default {
     },
     restrictToCanvas() {
       //Swap the velocity on colision
-      if (
-        this.ball.x - this.ball.radius < 0 ||
-        this.ball.x + this.ball.radius > this.cWidth
-      ) {
-        this.ball.velocity.x = -this.ball.velocity.x;
-      }
-      if (
-        this.ball.y - this.ball.radius < 0 ||
-        this.ball.y + this.ball.radius > this.cHeigth
-      ) {
-        this.ball.velocity.y = -this.ball.velocity.y;
-      }
+      if (this.isOutOfCorner("left") || this.isOutOfCorner("right"))
+        this.ball.velocity.x *= -1;
+
+      if (this.isOutOfCorner("top") || this.isOutOfCorner("bottom"))
+        this.ball.velocity.y *= -1;
 
       //Debug 'eternal colision'
-      if (this.ball.x - this.ball.radius < 0) {
-        this.ball.x = this.ball.radius;
-      } else if (this.ball.x + this.ball.radius > this.cWidth) {
-        this.ball.x = this.cWidth - this.ball.radius;
+      let corners = ["top", "bottom", "right", "left"];
+      corners.forEach((corner) => {
+        if (this.isOutOfCorner(corner)) this.adjustToCorner(corner);
+      });
+    },
+    isOutOfCorner(side) {
+      switch (side) {
+        case "top":
+          return this.ball.y - this.ball.radius < 0 - this.cRestrictFat;
+        case "bottom":
+          return (
+            this.ball.y + this.ball.radius > this.cHeigth + this.cRestrictFat
+          );
+        case "left":
+          return this.ball.x - this.ball.radius < 0 - this.cRestrictFat;
+        case "right":
+          return (
+            this.ball.x + this.ball.radius > this.cWidth + this.cRestrictFat
+          );
       }
-
-      if (this.ball.y - this.ball.radius < 0) {
-        this.ball.y = this.ball.radius;
-      } else if (this.ball.y + this.ball.radius > this.cHeigth) {
-        this.ball.y = this.cHeigth - this.ball.radius;
+    },
+    adjustToCorner(side) {
+      switch (side) {
+        case "top":
+          this.ball.y = this.ball.radius - this.cRestrictFat;
+          break;
+        case "bottom":
+          this.ball.y = this.cHeigth - this.ball.radius + this.cRestrictFat;
+          break;
+        case "left":
+          this.ball.x = this.ball.radius - this.cRestrictFat;
+          break;
+        case "right":
+          this.ball.x = this.cWidth - this.ball.radius + this.cRestrictFat;
+          break;
       }
     },
   },
