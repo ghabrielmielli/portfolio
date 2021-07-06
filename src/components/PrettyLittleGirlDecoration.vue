@@ -10,12 +10,17 @@
       <div class="right-foot" />
       <div class="arm" />
     </div>
+    <glowing-firefly />
   </div>
 </template>
 <script>
-export default {};
+import GlowingFirefly from "./GlowingFirefly.vue";
+export default {
+  components: { GlowingFirefly },
+};
 </script>
-<style scoped>
+<style scop
+    GlowingFireflyed>
 .canvas {
   position: absolute;
   bottom: 0px;

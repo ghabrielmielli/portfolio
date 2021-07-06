@@ -20,14 +20,12 @@ export default {
         radius: innerHeight / 2,
         color: "#be2f29",
 
-        mass: 0.2,
-
         velocity: {
           x: 1,
           y: 1,
           offset: {
             // the velocity for bounce back. its the base value + a random value between 0 and the offset value.
-            x: 1.8,
+            x: 0.8,
             y: 1,
             baseX: 0.3,
             baseY: 0.5,
@@ -87,13 +85,6 @@ export default {
       } else {
         this.ball.velocity.y += this.ball.gravity;
       }
-
-      //Change velocity of x axis on bounce
-      if (this.isOutOfCorner("left") || this.isOutOfCorner("right")) {
-        this.ball.velocity.x =
-          ((Math.random() * 100) % this.ball.velocity.offset.x) +
-          this.ball.velocity.offset.baseX;
-      }
     },
     paintBackground() {
       this.c.fillStyle = this.cColor;
@@ -106,8 +97,12 @@ export default {
     },
     restrictToCanvas() {
       //Swap the velocity on colision
-      if (this.isOutOfCorner("left") || this.isOutOfCorner("right"))
-        this.ball.velocity.x *= -1;
+      if (this.isOutOfCorner("left") || this.isOutOfCorner("right")) {
+        this.ball.velocity.x =
+          ((Math.random() * 100) % this.ball.velocity.offset.x) +
+          this.ball.velocity.offset.baseX;
+        if (this.isOutOfCorner("right")) this.ball.velocity.x *= -1;
+      }
 
       if (this.isOutOfCorner("top") || this.isOutOfCorner("bottom"))
         this.ball.velocity.y *= -1;
