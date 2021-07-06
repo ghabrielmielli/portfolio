@@ -8,6 +8,7 @@
         </glass-container>
       </div>
     </pretty-canvas>
+    <pretty-little-girl-decoration></pretty-little-girl-decoration>
   </div>
 </template>
 
@@ -15,12 +16,14 @@
 import GlassContainer from "./components/GlassContainer.vue";
 import NavHeader from "./components/NavHeader.vue";
 import PrettyCanvas from "./components/PrettyCanvas.vue";
+import PrettyLittleGirlDecoration from "./components/PrettyLittleGirlDecoration.vue";
 export default {
   name: "App",
   components: {
     NavHeader,
     PrettyCanvas,
     GlassContainer,
+    PrettyLittleGirlDecoration,
   },
 };
 </script>
