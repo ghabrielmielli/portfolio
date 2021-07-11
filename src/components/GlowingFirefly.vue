@@ -48,17 +48,17 @@ export default {};
 
 @keyframes leftright {
   0% {
-    left: -5%;
+    right: 105%;
     width: 5px;
     height: 5px;
   }
   16.666% {
-    left: 20%;
+    right: 80%;
     width: 20px;
     height: 20px;
   }
   34% {
-    left: 19%;
+    right: 81%;
     width: 20px;
     height: 20px;
   }
@@ -67,25 +67,25 @@ export default {};
     height: 10px;
   }
   50% {
-    left: 75%;
+    right: 25%;
     width: 18px;
     height: 18px;
   }
   66.666% {
-    left: 50%;
+    right: 50%;
     width: 15px;
     height: 15px;
   }
   76% {
-    left: 60%;
+    right: 40%;
   }
   83% {
-    left: 59%;
+    right: 41%;
     width: 17px;
     height: 17px;
   }
   100% {
-    left: 84%;
+    right: 155px;
     width: 15px;
     height: 15px;
   }
@@ -108,28 +108,28 @@ export default {};
     bottom: 170%;
   }
   100% {
-    bottom: 43%;
+    bottom: 160px;
   }
 }
 
 @keyframes loop {
   0%,
   100% {
-    bottom: 44%;
+    bottom: 160px;
     transform: scale(1);
 
     box-shadow: 0 0 10px var(--primary), 0 0 15px var(--primary),
       0 0 30px var(--primary);
   }
   25% {
-    bottom: 52%;
+    bottom: 169px;
     transform: scale(1.2);
 
     box-shadow: 0 0 5px var(--primary), 0 0 25px var(--primary),
       0 0 40px var(--primary);
   }
   50% {
-    bottom: 46%;
+    bottom: 164px;
     transform: scale(1.1);
 
     box-shadow: 0 0 7px var(--primary), 0 0 8px var(--primary),
@@ -139,7 +139,7 @@ export default {};
     transform: scale(1.3);
   }
   80% {
-    bottom: 49%;
+    bottom: 167px;
 
     box-shadow: 0 0 3px var(--primary), 0 0 18px var(--primary),
       0 0 35px var(--primary);

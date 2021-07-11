@@ -40,7 +40,7 @@ export default {
 .little-girl {
   position: absolute;
   bottom: 20%;
-  right: 10%;
+  right: 75px;
   /* border: 2px solid pink; */
   width: 90px;
   height: 250px;
@@ -91,6 +91,9 @@ export default {
   background: var(--complement);
 
   z-index: 5;
+
+  animation: head_noticefly 18s 1 5s ease-in-out;
+  animation-fill-mode: forwards, forwards;
 }
 
 .eye {
@@ -118,5 +121,40 @@ export default {
   border-color: transparent var(--dark) transparent transparent;
 
   z-index: 6;
+
+  animation: arm_reachfly 3.2s 1 20s cubic-bezier(0.39, 0, 0.63, 1);
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes arm_reachfly {
+  0% {
+    right: 30px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(60deg);
+    right: 72px;
+    bottom: 68px;
+  }
+}
+@keyframes head_noticefly {
+  0%,
+  20% {
+    transform: none;
+  }
+  30% {
+    transform: rotate(-40deg) translate(-3px, -3px);
+  }
+  50% {
+    transform: rotate(-70deg) translate(-3px, -3px);
+  }
+  66%,
+  86% {
+    transform: rotate(10deg) translate(2px, 2px);
+  }
+
+  100% {
+    transform: rotate(-75deg) translate(-9px, -9px);
+  }
 }
 </style>
