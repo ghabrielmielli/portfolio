@@ -28,8 +28,7 @@ export default {
 @import "../aux/brand.css";
 header {
   max-width: 100vw;
-  min-height: 3vh;
-  max-height: 3vh;
+  height: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;

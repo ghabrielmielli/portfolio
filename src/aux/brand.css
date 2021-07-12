@@ -25,11 +25,12 @@ body {
 	padding: 0;
 	border: 0;
 	font-family: "Merienda", Helvetica, Arial;
+	overflow: hidden;
 }
 h1 {
 	font-family: "Dancing Script", Arial;
 	font-size: 2.2rem;
-	color: var(--secondary);
+	color: var(--primary);
 }
 h2 {
 	font-family: "Dancing Script", Arial;
@@ -43,4 +44,14 @@ p {
 	letter-spacing: 0.05rem;
 	line-height: 1.6rem;
 	font-weight: 1000;
+}
+
+.basic-container {
+	width: 100vw;
+	height: 80vh;
+	display: flex;
+	position: absolute;
+
+	margin: 20px auto;
+	padding: 1rem 1rem 1rem 1rem;
 }

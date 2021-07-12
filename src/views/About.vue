@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-box">
+  <div class="basic-container">
     <titled-icon class="titled-icon" />
     <div class="divider"></div>
     <about-text class="about-part" />
@@ -16,15 +16,10 @@ export default {
 };
 </script>
 <style scoped>
-.flex-box {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
 .divider {
   width: 1px;
   height: 80%;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   align-self: center;
 }
 

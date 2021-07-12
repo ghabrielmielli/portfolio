@@ -15,7 +15,7 @@ export default {};
 img {
   width: 10rem;
   height: 10rem;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   border-radius: 50%;
 }
 .mainDiv {

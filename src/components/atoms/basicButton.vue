@@ -1,8 +1,5 @@
 <template>
-  <div :class="isCool ? 'cool' : 'button'" v-if="!link">
-    <slot></slot>
-  </div>
-  <router-link :class="isCool ? 'cool' : 'button'" v-else :to="link">
+  <router-link :class="isCool ? 'cool' : 'button'" :to="link || '#'">
     <slot></slot>
   </router-link>
 </template>
@@ -53,5 +50,9 @@ export default {
   box-shadow: 0px 0px var(--primary);
   transform: translate(-12px, 12px);
   transition: 0.05s;
+}
+
+a.router-link-active {
+  border-bottom: 3px solid var(--primary);
 }
 </style>

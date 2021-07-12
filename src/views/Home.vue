@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="basic-container main-content">
     <h1>Hi, I'm Ghabriel, and I like to develop stuff!</h1>
     <h4>
       Currently, I'm studying Software Engineering at UFMS, and I'd love to see
