@@ -3,7 +3,9 @@
     <nav>
       <ul>
         <li v-for="link in links" :key="link.name">
-          <basic-button :link="link.path">{{ link.name }}</basic-button>
+          <basic-button :style="navigationButton" :link="link.path">{{
+            link.name
+          }}</basic-button>
         </li>
       </ul>
     </nav>
@@ -17,6 +19,7 @@ export default {
   data() {
     return {
       links: [],
+      navigationButton: "navBtn",
     };
   },
   created() {

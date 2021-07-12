@@ -6,7 +6,7 @@
       how's the world out there for web developers! Feel free to contact me for
       internship opportunities.
     </h4>
-    <basic-button isCool>Find me!</basic-button>
+    <basic-button :style="coolButton">Find me!</basic-button>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ import basicButton from "../components/atoms/basicButton.vue";
 
 export default {
   components: { basicButton },
+  data() {
+    return {
+      coolButton: "cool",
+    };
+  },
 };
 </script>
 <style scoped>
@@ -22,7 +27,6 @@ export default {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height: 100%;
   padding-left: 2rem;
 }
 h1 {

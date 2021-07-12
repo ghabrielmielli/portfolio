@@ -1,5 +1,5 @@
 <template>
-  <router-link :class="isCool ? 'cool' : 'button'" :to="link || '#'">
+  <router-link :class="style" :to="link || '#'">
     <slot></slot>
   </router-link>
 </template>
@@ -7,7 +7,10 @@
 export default {
   props: {
     link: String,
-    isCool: Boolean,
+    style: {
+      type: String,
+      default: "button",
+    },
   },
 };
 </script>
@@ -24,6 +27,17 @@ export default {
   padding: 0.2rem 1.6rem;
 }
 
+.navBtn {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+.navBtn:hover:not(.router-link-active) {
+  box-shadow: 0 8px 2px -6px var(--light);
+  background-color: rgba(1, 1, 1, 0);
+}
+
 .cool {
   user-select: none;
 
@@ -37,22 +51,22 @@ export default {
 
   color: var(--primary);
   background-color: var(--dark);
-  box-shadow: -8px 8px var(--primary);
+  box-shadow: -3px 3px var(--primary);
   border: 2px solid var(--primary);
 
-  transition: 0.3s ease-out;
+  transition: 0.4s ease-out;
 }
 .cool:hover {
-  box-shadow: -12px 12px var(--primary);
-  transform: translate(4px, -4px);
+  box-shadow: -5px 5px var(--primary);
+  transform: translate(2px, -2px);
 }
 .cool:active {
   box-shadow: 0px 0px var(--primary);
-  transform: translate(-12px, 12px);
-  transition: 0.05s;
+  transform: translate(-5px, 5px);
+  transition: 0.08s;
 }
 
-a.router-link-active {
+a.router-link-active.navBtn {
   border-bottom: 3px solid var(--primary);
 }
 </style>
