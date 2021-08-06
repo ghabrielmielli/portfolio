@@ -30,8 +30,8 @@ export default {
 <style scoped>
 @import "../aux/brand.css";
 header {
-  max-width: 100vw;
-  height: 3vh;
+  width: 100vw;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;

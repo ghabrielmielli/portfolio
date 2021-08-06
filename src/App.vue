@@ -62,7 +62,7 @@ export default {
 
 .swipeleft-enter-active,
 .swipeleft-leave-active {
-  transition: transform 1.5s;
+  transition: transform 1s;
 }
 
 .swipeleft-enter-from {
@@ -79,7 +79,7 @@ export default {
 
 .swiperight-enter-active,
 .swiperight-leave-active {
-  transition: transform 1.5s;
+  transition: transform 1s;
 }
 
 .swiperight-enter-from {

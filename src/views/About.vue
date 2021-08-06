@@ -1,7 +1,7 @@
 <template>
   <div class="basic-container">
     <titled-icon class="titled-icon" />
-    <div class="divider"></div>
+    <!-- <div class="divider"></div> -->
     <about-text class="about-part" />
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
   width: 25%;
 }
 .about-part {
-  width: 65%;
-  padding: 1.5rem;
+  width: 60%;
+  margin-left: 5%;
 }
 </style>
